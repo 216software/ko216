@@ -1,0 +1,26 @@
+{
+  "name": "ko216",
+  "main": "ko216.js",
+  "authors": [
+    "Rob Heinen <rob@216software.com>",
+    "Matt Wilson <matt@216software.com>"
+
+  ],
+  "description": "Our custom bindings for knockout.js",
+  "keywords": [
+    "knockout",
+    "216"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/216software/ko216",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "knockoutjs": ">=2.2.0"
+  }
+}
