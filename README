@@ -2,3 +2,6 @@ Knockout is great.
 
 These are some of bindings.
 
+Install like this::
+
+    $ bower install --save --production ko216
