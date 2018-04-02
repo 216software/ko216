@@ -1,7 +1,13 @@
 Knockout is great.
 
-These are some of bindings.
+These are some of the bindings we've added at 216 Software, LLC
 
 Install like this::
 
     $ bower install --save --production ko216
+
+How to release updates
+======================
+
+Instead of using a "version" field in bower.json, you make a new git
+tag and push that up to github.
