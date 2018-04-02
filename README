@@ -10,4 +10,20 @@ How to release updates
 ======================
 
 Instead of using a "version" field in bower.json, you make a new git
-tag and push that up to github.
+tag and push that up to github, and then you re-register your project.
+
+For example, this is how I released the 1.1.0 version::
+
+    $ git tag
+    $ git commit -a -m "Copied in some stuff from a junkdrawer.js file.  Does it work?  Are there tests?  Do I even know what it is?"
+    $ git tag 1.1.0
+    $ git push github 1.1.0
+
+
+
+And now, somebody else can do this to grab this stuff::
+
+    bower install ko216==1.1.0
+
+
+.. vim: set syntax=rst:
