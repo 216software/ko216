@@ -1,6 +1,5 @@
-Knockout is great.
-
-These are some of the bindings we've added at 216 Software, LLC
+These are some of the bindings we've added at 216 Software, LLC to
+knockout.
 
 Install like this::
 
@@ -19,11 +18,14 @@ For example, this is how I released the 1.1.0 version::
     $ git tag 1.1.0
     $ git push github 1.1.0
 
-
-
 And now, somebody else can do this to grab this stuff::
 
-    bower install ko216==1.1.0
+    bower install ko216#1.1.0
+
+This all only works because I already ran::
+
+    $ bower register ko216 https://github.com/216software/ko216
+
 
 
 .. vim: set syntax=rst:
