@@ -358,29 +358,6 @@ ko.bindingHandlers.dateTimePicker = {
    data-bind="executeOnEnter: sendMessage, button : buttonSelector"
 */
 
-
-ko.bindingHandlers.executeOnEnter = {
-    init: function (element, valueAccessor, allBindings, viewModel) {
-        var options = valueAccessor();
-
-        if (options === undefined)
-        {
-            return false;
-        }
-        var callback = options.callback;
-        var selector_id = options.selector_id || element;
-        $(element).keypress(function (event) {
-            var keyCode = (event.which ? event.which : event.keyCode);
-            if (keyCode === 13) {
-                callback.call(viewModel, selector_id);
-                return false;
-            }
-            return true;
-        });
-    }
-};
-
-
 ko.bindingHandlers.selected = {
     update: function(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
         var selected = ko.utils.unwrapObservable(valueAccessor());
@@ -778,8 +755,6 @@ ko.bindingHandlers.selectPicker = {
     init: function (element, valueAccessor, allBindingsAccessor) {
         var options = ko.unwrap(valueAccessor());
 
-        console.log('selectpicker options');
-
         $(element).addClass('selectpicker').selectpicker(options);
     },
     update: function (element, valueAccessor, allBindingsAccessor) {
@@ -797,9 +772,6 @@ ko.bindingHandlers.selectPicker = {
 // Register it
 ko.components.loaders.unshift(templateFromUrlLoader);
 
-
-
-
 // Google locations component extractor
 function extractFromAdress(components, type, shortName){
     for (var i=0; i<components.length; i++)
@@ -810,5 +782,10 @@ function extractFromAdress(components, type, shortName){
     return "";
 }
 
-
-
+ko.bindingHandlers.filestyle = {
+    after: ['options'],   /* KO 3.0 feature to ensure binding execution order */
+    init: function (element, valueAccessor, allBindingsAccessor) {
+        console.debug("Inside init...");
+        $(element).addClass('filestyle').filestyle({input: false, badge: false});
+    }
+};
